@@ -8,7 +8,7 @@
     <meta property="twitter:card" content="summary_large_image" />
 
     <style data-tag="reset-style-sheet">
-      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
+
     </style>
     <style data-tag="default-style-sheet">
       html {
@@ -434,40 +434,24 @@
 
 
       <div class="home-container">
-        <div id="navitagation_main_container" class="home-container01">
+        <div id="navigation_main_container" class="home-container01">
           <header id="nav_bar_header" data-role="Header" class="home-header">
             <span id="Uber-link" class="home-text">Uber</span>
             <div id="nav_bar_links" class="home-nav">
-              <span id="viaje" class="home-text01">Viaje</span>
-              <span id="conducir" class="home-text02">Conducir</span>
-              <span id="uber_empresas" class="home-text03">
-                Uber para empresas
-              </span>
-              <span id="uber_eats" class="home-text04">Uber eats</span>
-              <span id="mas_informacion" class="home-text05">
-                Mas informacion
-              </span>
+              <a href="{{ url_for('viaje') }}" class="home-text01">Viaje</a>
+              <a href="https://www.uber.com/co/es/drive/?uclick_id=94734c9d-4c2c-4982-ae58-20ee99f4db00" class="home-text02">Conducir</a>
+              <a href="https://www.uber.com/co/es/business/?uclick_id=94734c9d-4c2c-4982-ae58-20ee99f4db00" class="home-text03">Uber para empresas</a>
+              <a href="https://www.ubereats.com/?uclick_id=94734c9d-4c2c-4982-ae58-20ee99f4db00" class="home-text04">Uber eats</a>
+              <a href="https://www.uber.com/co/es/about/?uclick_id=94734c9d-4c2c-4982-ae58-20ee99f4db00" class="home-text05">Más información</a>
             </div>
             <div id="nav_bar_buttons" class="home-btn-group">
-              <button
-                id="Login"
-                name="Login"
-                type="button"
-                class="home-button button"
-              >
-                Login
-              </button>
-              <button
-                id="Sign-in"
-                name="Sign-in"
-                type="button"
-                class="home-button1 button"
-              >
-                Sign in
-              </button>
+              <a href="https://www.uber.com/co/en/ride/?ad_id=687156507569&adg_id=156813381559&campaign_id=20931062371&cre=687156507569&dev=c&dev_m=&fi_id=&gad_source=1&gclid=EAIaIQobChMIsLD-8OichAMV16NaBR1--wgXEAAYASAAEgLTifD_BwE&gclsrc=aw.ds&kw=uber&kwid=kwd-12633382&match=b&net=g&placement=&tar=&utm_campaign=CM2358409-search-google-brand_38_-99_CO-National_r_web_acq_cpc_es_T2_Generic_BM_uber_kwd-12633382_687156507569_156813381559_b_c&utm_source=AdWords_Brand" id="Login" class="home-button button">Login</a>
+              <a href="https://www.uber.com/co/en/ride/?ad_id=687156507569&adg_id=156813381559&campaign_id=20931062371&cre=687156507569&dev=c&dev_m=&fi_id=&gad_source=1&gclid=EAIaIQobChMIsLD-8OichAMV16NaBR1--wgXEAAYASAAEgLTifD_BwE&gclsrc=aw.ds&kw=uber&kwid=kwd-12633382&match=b&net=g&placement=&tar=&utm_campaign=CM2358409-search-google-brand_38_-99_CO-National_r_web_acq_cpc_es_T2_Generic_BM_uber_kwd-12633382_687156507569_156813381559_b_c&utm_source=AdWords_Brand" id="Sign-in" class="home-button1 button">Sign in</a>
             </div>
           </header>
         </div>
+
+
         <div id="second_,main" class="home-second-main">
           <div id="second_main_inner_left" class="home-container02">
             <div id="inner_left" class="home-container03">
@@ -489,28 +473,31 @@
               <span id="pide_viaje" class="home-text18">
                 Pide un viaje, súbete al vehículo y relájate.
               </span>
+             <form action="{{ url_for('process_form') }}" method="post">
               <input
                 type="text"
                 id="ingresar_punto_inicio"
                 name="ingresar_punto_inicio"
-                placeholder="Ingresar ubicacion"
+                placeholder="Ingresar ubicación"
                 class="home-textinput input"
               />
               <input
                 type="text"
-                id="ingresar_punto_inicio"
-                name="ingresar_punto_inicio"
+                id="ingresar_punto_final"
+                name="ingresar_punto_final"
                 placeholder="Ingresar destino"
                 class="home-textinput1 input"
               />
               <button
                 id="ver_precios"
                 name="ver_precios"
-                type="button"
+                type="submit"
                 class="home-button2 button"
               >
                 Ver precios
               </button>
+            </form>
+
             </div>
           </div>
           <div id="second_main_inner_right" class="home-container04">
@@ -544,17 +531,15 @@
               través de la app de Uber.
             </span>
             <div class="home-container07">
-              <button
-                id="Comenzar"
-                name="Comenzar"
-                type="button"
-                class="home-button3 button"
-              >
+              <form action="{{ url_for('comenzar_action') }}" method="post">
+              <button id="Comenzar" name="Comenzar" type="submit" class="home-button3 button">
                 Comenzar
               </button>
-              <span id="link_tienes_cuenta" class="home-text30">
-                ¿Ya tienes una cuenta? Inicia sesión
-              </span>
+              </form>
+                <span id="link_tienes_cuenta" class="home-text30">
+                  ¿Ya tienes una cuenta? <a href='https://www.uber.com/co/en/?ad_id=687156507569&campaign_id=20931062371&gclid=EAIaIQobChMIsLD-8OichAMV16NaBR1--wgXEAAYASAAEgLTifD_BwE&kw=uber&kwid=kwd-12633382&uclick_id=7281013b-4666-4290-8636-5649eff4ed7d&utm_campaign=CM2358409-search-google-brand_38_-99_CO-National_r_web_acq_cpc_es_T2_Generic_BM_uber_kwd-12633382_687156507569_156813381559_b_c&utm_source=AdWords_Brand'>Inicia sesión</a>
+                </span>
+
             </div>
           </div>
         </div>
@@ -583,18 +568,17 @@
                 <span>comidas globales, así como entregas locales.</span>
               </span>
               <div class="home-container10">
-                <button
-                  id="Comenzar_2"
-                  name="comenzar_2"
-                  type="button"
-                  class="home-button4 button"
-                >
-                  Comenzar
-                </button>
-                <span id="conoce_soluciones" class="home-text47">
-                  Conoce nuestras soluciones.
-                </span>
+                  <form action="{{ url_for('comenzar_action_2') }}" method="post">
+                    <button id="Comenzar_2" name="comenzar_2" type="submit" class="home-button4 button">
+                      Comenzar
+                    </button>
+                  </form>
+
+                  <span id="conoce_soluciones" class="home-text47">
+                    <a href='https://www.uber.com/co/en/business/?ad_id=687156507569&campaign_id=20931062371&gclid=EAIaIQobChMIsLD-8OichAMV16NaBR1--wgXEAAYASAAEgLTifD_BwE&kw=uber&kwid=kwd-12633382&uclick_id=7281013b-4666-4290-8636-5649eff4ed7d&utm_campaign=CM2358409-search-google-brand_38_-99_CO-National_r_web_acq_cpc_es_T2_Generic_BM_uber_kwd-12633382_687156507569_156813381559_b_c&utm_source=AdWords_Brand'>Conoce nuestras soluciones.</a>
+                  </span>
               </div>
+
             </div>
           </div>
           <div id="fourth_main_inner_right" class="home-container11">
